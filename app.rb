@@ -1,5 +1,5 @@
 require_relative 'config/environment'
-
+require 'pry'
 class App < Sinatra::Base
   get '/reversename/:name' do
     @name = params[:name].reverse
@@ -21,6 +21,7 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
+    binding.pry
     @ret = params.values.join(" ")
     "#{ret}"
   end
